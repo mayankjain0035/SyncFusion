@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:local="clr-namespace:ChartGettingStarted;assembly=ChartGettingStarted"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChartGettingStarted.ChartSample"
+             NavigationPage.HasNavigationBar="True">
+    <StackLayout Padding="0,15,0,0">
+
+        <chart:SfChart x:Name="chart" SelectionChanged="Chart_SelectionChanged" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+
+
+            <chart:PieSeries EnableDataPointSelection="True" x:Name="series" ItemsSource="{Binding PieData}"
+                 XBindingPath="Type" YBindingPath="Value">
+
+                <chart:PieSeries.DataMarker>
+                    <chart:ChartDataMarker LabelContent="Percentage"/>
+                </chart:PieSeries.DataMarker>
+
+            </chart:PieSeries>
+
+            <chart:SfChart.Legend>
+                <chart:ChartLegend/>
+            </chart:SfChart.Legend>
+        </chart:SfChart>
+
+    </StackLayout>  
+</ContentPage>

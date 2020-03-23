@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
+             xmlns:local="clr-namespace:ChartGettingStarted;assembly=ChartGettingStarted"
+             x:Class="ChartGettingStarted.SecondayPage"
+             NavigationPage.HasNavigationBar="True">
+    <StackLayout Padding="0,15,0,0">
+        <StackLayout Orientation="Horizontal">
+            <Button x:Name="zoomIn" HorizontalOptions="FillAndExpand" Text="Zoom In"></Button>
+            <Button x:Name="zoomOut" HorizontalOptions="FillAndExpand" Text="Zoom Out"></Button>
+            <Button x:Name="zoomReset" HorizontalOptions="FillAndExpand" Text="Reset Zoom"></Button>
+        </StackLayout>
+        
+        <local:ChartExt x:Name="chart" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+            <chart:SfChart.PrimaryAxis>
+                <chart:DateTimeAxis x:Name="primary">
+                    <chart:DateTimeAxis.Title>
+                        <chart:ChartAxisTitle  Text="Types"/>
+                    </chart:DateTimeAxis.Title>
+                </chart:DateTimeAxis>
+            </chart:SfChart.PrimaryAxis>
+            <chart:SfChart.SecondaryAxis>
+                <chart:NumericalAxis x:Name="secondary">
+                    <chart:NumericalAxis.Title>
+                        <chart:ChartAxisTitle Text="Sales in ($)"/>
+                    </chart:NumericalAxis.Title>
+                    <chart:NumericalAxis.LabelStyle>
+                        <chart:ChartAxisLabelStyle LabelFormat="#'$'"/>
+                    </chart:NumericalAxis.LabelStyle>
+                </chart:NumericalAxis>
+            </chart:SfChart.SecondaryAxis>
+ 
+        </local:ChartExt>
+    </StackLayout>  
+</ContentPage>
